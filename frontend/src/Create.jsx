@@ -4,7 +4,7 @@ import './App.css';
 function Create() {
   const [task,setTask]=useState("");
   const handleAdd=async()=>{
-    axios.post("http://localhost:3001/add",{task:task}  )
+    axios.post("https://deploying-backend-gact.onrender.com/add",{task:task}  )
     .then((res)=>console.log(res.data))
     .catch((err)=>console.log(err));
   }
