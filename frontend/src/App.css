@@ -1,0 +1,77 @@
+.home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.create_form input{
+    width:300px;
+    padding: 10px;
+    border-bottom:2px solid;
+    outline: none;
+}
+.create_form button{
+    padding:10px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+.task{
+    display: flex;
+    align-items: center;
+    width:345px;
+    justify-content: space-between;
+    background-color: rgb(134, 112, 112);
+    color: white;
+    height: 35px;
+    padding:2px 5px 2px 5px;
+    margin-top:2px;
+}
+.checkbox{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    
+}
+.check{
+    text-decoration:line-through;
+    text-decoration-color: rgb(248, 10, 10);
+    
+    font-size: 20px;
+    margin-left: 15px;
+}
+.j{
+    font-size: large;
+}
+.checkbox .icon{
+    margin-right: 5px;
+    font-size: 15px;
+}
+.task div span{
+    margin:0px 5px 0px 4px;
+}
+.task div .icon{
+    cursor: pointer;
+    
+}
+.delete{
+    background-color: rgb(223, 15, 15);
+    color: aliceblue;
+}
+.round{
+    
+}
+.default_round{
+    background-color: aliceblue;
+}
+.checkround{
+    background-color: rgb(95, 223, 15);
+    
+}
+.f{
+    margin-left: 15px;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+button{
+    cursor: pointer;
+}
