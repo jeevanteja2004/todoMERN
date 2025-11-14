@@ -7,7 +7,7 @@ import './App.css';
 function Home() {
     const [todos, setTodos] = useState([]);
     const fetchTodos = () => {
-    axios.get("http://localhost:3001/get")
+    axios.get("https://todo-mern-theta-five.vercel.app/get")
       .then(result => setTodos(result.data))
       .catch(err => console.log(err));
   };
@@ -17,12 +17,12 @@ function Home() {
     }, []);
     const checked=async(id)=>{
       console.log("clicked")
-      axios.put("http://localhost:3001/update/"+id)
+      axios.put("https://todo-mern-theta-five.vercel.app/update/"+id)
       .then(() => fetchTodos()) 
       .catch(err=>console.log(err));
     }
     const deleted=async(id)=>{
-      axios.delete("http://localhost:3001/delete/"+id)
+      axios.delete("https://todo-mern-theta-five.vercel.app/delete/"+id)
       .then(() => fetchTodos()) 
       .catch(err=>console.log(err));
     }
