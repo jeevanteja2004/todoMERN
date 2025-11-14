@@ -5,7 +5,12 @@ const cors=require('cors');
 const todomodel=require('./Models/Todo');
 const MONGODB_URI="mongodb+srv://jeevanteja334_db_user:todolist@cluster0.tkq7sku.mongodb.net/?appName=Cluster0";
 const app=express();
-app.use(cors());
+
+app.use(cors({
+  origin: ["http://localhost:5173"],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
 app.use(express.json());
 mongoose.connect(MONGODB_URI)
 .then(()=>{
