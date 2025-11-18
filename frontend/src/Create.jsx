@@ -1,11 +1,16 @@
 import React,{useState} from 'react';
 import axios from 'axios';
 import './App.css';
-function Create() {
+function Create(props) {
+  //https://deploying-backend-gact.onrender.com
   const [task,setTask]=useState("");
+  const {callFunction}=props;
   const handleAdd=async()=>{
-    axios.post("https://deploying-backend-gact.onrender.com/add",{task:task}  )
-    .then((res)=>console.log(res.data))
+    axios.post("https://deploying-backend-gact.onrender.com/add",{task:task }  )  
+    .then((res)=>{
+    console.log(res.data);
+    callFunction();
+    } )
     .catch((err)=>console.log(err));
   }
   return (

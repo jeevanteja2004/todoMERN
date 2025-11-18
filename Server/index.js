@@ -6,11 +6,7 @@ const todomodel=require('./Models/Todo');
 const MONGODB_URI="mongodb+srv://jeevanteja334_db_user:todolist@cluster0.tkq7sku.mongodb.net/?appName=Cluster0";
 const app=express();
 
-app.use(cors({
-  origin: ["https://todo-mern-theta-five.vercel.app/"],
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true
-}));
+app.use(cors( { methods:['GET','POST','PUT','DELETE'] }  ));
 app.use(express.json());
 mongoose.connect(MONGODB_URI)
 .then(()=>{
@@ -26,7 +22,7 @@ mongoose.connect(MONGODB_URI)
 app.post('/add', async(req,res)=>{
     const task=req.body.task; 
     
-    await todomodel.create({task:task})
+    await todomodel.create({task:task,startAt:Date.now()})
     .then(result=>res.json(result))
     .catch(err=>res.status(500).json({error:'Failed to add task'}));
 });
@@ -37,8 +33,8 @@ app.get('/get', async(req,res)=>{
 }); 
 app.put('/update/:id',(req,res)=>{
     const {id}=req.params;
-    console.log(id);
-    todomodel.findByIdAndUpdate({_id:id},{done:true})
+    
+    todomodel.findByIdAndUpdate({_id:id},{done:true, completedAt:Date.now()})
     .then(result=>res.json(result))
     .catch(err=>res.json(err))
 })

@@ -6,8 +6,11 @@ const todoSchema=new mongoose.Schema({
     done:{
             type:Boolean,
             default:false
-        }
-    
+          
+  },
+  startAt: { type: Date },
+  completedAt: { type: Date }
 });
+
 const todomodel=mongoose.model('Todo',todoSchema);
 module.exports=todomodel;

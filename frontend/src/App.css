@@ -15,63 +15,72 @@
     color: white;
     cursor: pointer;
 }
+
+
 .task{
     display: flex;
-    align-items: center;
-    width:345px;
-    justify-content: space-between;
-    background-color: rgb(134, 112, 112);
-    color: white;
-    height: 35px;
-    padding:2px 5px 2px 5px;
-    margin-top:2px;
+    flex-direction: column;
 }
-.checkbox{
-    display: flex;
-    align-items: center;
-    cursor: pointer;
+.red{
+    background-color: red;
+    color:white;
+    width: 50%;
+    height: 30px;
     
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
-.check{
-    text-decoration:line-through;
-    text-decoration-color: rgb(248, 10, 10);
+.Green{
+    background-color: green;
+    color:white;  
+     width: 50%;
+    height: 30px;
     
-    font-size: 20px;
-    margin-left: 15px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;  
 }
-.j{
-    font-size: large;
-}
-.checkbox .icon{
-    margin-right: 5px;
-    font-size: 15px;
-}
-.task div span{
-    margin:0px 5px 0px 4px;
-}
-.task div .icon{
-    cursor: pointer;
-    
-}
-.delete{
-    background-color: rgb(223, 15, 15);
-    color: aliceblue;
-}
-.round{
-    
-}
-.default_round{
-    background-color: aliceblue;
-}
-.checkround{
-    background-color: rgb(95, 223, 15);
-    
-}
-.f{
-    margin-left: 15px;
-    text-transform: uppercase;
-    font-size: 16px;
-}
+
 button{
     cursor: pointer;
+}
+table{
+    margin-top:20px;
+    border-collapse: collapse;
+    width: 80%;
+}
+th,td{
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+tr:nth-child(even){
+    background-color: #deb5b5;
+}
+tr:nth-child(odd){
+    background-color: #dcb290;
+}
+
+th{
+    padding-top:12px;
+    padding-bottom:12px;
+    background-color: black;
+    color:white;
+}
+.date{
+    background-color: indianred;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    margin-left: 10px;
+    font-size: 12px;
+    width: 40%;
+}
+.task-name{
+    font-weight: bold;
+    font-size: 16px;
+    margin-left: 5px;
+    width: 40%;
+
 }
